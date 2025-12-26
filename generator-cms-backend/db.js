@@ -1,6 +1,9 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import mongoose from "mongoose";
+
+import dotenv from "dotenv";
+dotenv.config();
 const mongoURL = process.env.MONGO_URL;
+console.log("mongoDb URI.....", mongoURL);
 
 async function db() {
   if (mongoose.connection.readyState === 1) {
@@ -23,4 +26,4 @@ async function db() {
     });
 }
 
-module.exports = db;
+export default db;

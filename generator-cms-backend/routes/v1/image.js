@@ -1,10 +1,10 @@
-const express = require("express");
-const { generateImage } = require("../../controller/image");
-const { auth } = require("../../middleware/auth");
+import express from "express";
+import { generateImage } from "../../controller/image.js";
+import { auth } from "../../middleware/auth.js";
 const router = express.Router();
 
 router.post("/generate", auth, generateImage);
 
-module.exports = router;
+export default router;
 
 // /v1/image/generate

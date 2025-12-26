@@ -1,9 +1,10 @@
-const User = require("../models/auth");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
-require("dotenv").config();
+import User from "../models/auth.js";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
+import dotenv from "dotenv";
+dotenv.config();
 
-exports.signIn = async (req, res) => {
+export const signIn = async (req, res) => {
   try {
     console.log("Start processing of logging in request");
 
@@ -57,7 +58,7 @@ exports.signIn = async (req, res) => {
   }
 };
 
-exports.signUp = async (req, res) => {
+export const signUp = async (req, res) => {
   try {
     console.log("Start processing of signing up request");
     const { name, email, password } = req.body;

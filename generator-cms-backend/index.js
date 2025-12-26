@@ -1,18 +1,16 @@
-const express = require("express");
-const cors = require("cors");
-const router = require("./routes/v1");
+import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
+import cors from "cors";
+import router from "./routes/v1/index.js";
+import db from "./db.js";
 const app = express();
-const db = require("./db");
-
-require("dotenv").config();
+app.use(cors());
 const PORT = process.env.PORT;
 
-db();
-
-app.use(cors());
 // parse json
 app.use(express.json());
-
+db();
 app.use("/v1", router);
 
 app.get("/", (req, res) => {

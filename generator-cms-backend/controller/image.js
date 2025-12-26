@@ -1,7 +1,7 @@
 // openai service or gemini service for generating image
 // api key
 
-exports.generateImage = async (req, res) => {
+export async function generateImage(req, res) {
   try {
     console.log(
       `Started processing of image generation request for user id ${req.user.id}`
@@ -21,4 +21,4 @@ exports.generateImage = async (req, res) => {
       message: "Internal server error",
     });
   }
-};
+}

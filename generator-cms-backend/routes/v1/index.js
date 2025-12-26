@@ -1,9 +1,9 @@
-const express = require("express");
-const authRouter = require("./auth");
-const imageRouter = require("./image");
+import express from "express";
+import authRouter from "./auth.js";
+import imageRouter from "./image.js";
 const router = express.Router();
 
 router.use("/auth", authRouter);
 router.use("/image", imageRouter);
 
-module.exports = router;
+export default router;
